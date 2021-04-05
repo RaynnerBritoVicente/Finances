@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/finances/static/css/main.13cda7d3.chunk.css",
+    "main.js": "/finances/static/js/main.6f41354b.chunk.js",
+    "main.js.map": "/finances/static/js/main.6f41354b.chunk.js.map",
+    "runtime-main.js": "/finances/static/js/runtime-main.63fe227d.js",
+    "runtime-main.js.map": "/finances/static/js/runtime-main.63fe227d.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/finances/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.e8304522.chunk.js": "/finances/static/js/2.e8304522.chunk.js",
+    "static/js/2.e8304522.chunk.js.map": "/finances/static/js/2.e8304522.chunk.js.map",
+    "index.html": "/finances/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/finances/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.13cda7d3.chunk.css.map": "/finances/static/css/main.13cda7d3.chunk.css.map",
+    "static/js/2.e8304522.chunk.js.LICENSE.txt": "/finances/static/js/2.e8304522.chunk.js.LICENSE.txt",
+    "static/media/Logo_FB.edbae7df.png": "/finances/static/media/Logo_FB.edbae7df.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63fe227d.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.e8304522.chunk.js",
+    "static/css/main.13cda7d3.chunk.css",
+    "static/js/main.6f41354b.chunk.js"
+  ]
+}
