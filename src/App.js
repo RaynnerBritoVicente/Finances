@@ -24,7 +24,7 @@ function App(){
   const [moeda, setMoeda] = useState('')
   const [convertido, setConvertido] = useState('')
 
-  async function obtemCotacao(moeda, valor) {
+  async function obtemCotacao() {
     let urlCota = `https://economia.awesomeapi.com.br/json/all/`
     await fetch(urlCota)
      .then(response => response.json())
@@ -37,8 +37,10 @@ function App(){
      })
   }
 
-  function converter(valor, moeda, retorno){
-    let setConvertido = valor / retorno[moeda]['ask']
+  function converter(valor, moeda, resultado){
+    let convertido = moeda ? valor / resultado[moeda]['ask'] : 0
+    setConvertido(convertido.toFixed(2))
+    console.log(convertido)
   }
 
   useEffect(() => {
@@ -48,15 +50,16 @@ function App(){
   useEffect(() => {
     if(resultado){
       setCorpo(true)
+      converter(valor, moeda, resultado)
     }else{
       setCorpo(false)
     }
-  },[resultado])
+  },[resultado, moeda, valor])
 
   return(
     <>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home"><img src={Logo} width="100px"/></Navbar.Brand>
+        <Navbar.Brand href="#home"><img src={Logo} alt="Logo" width="100px"/></Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#dev">Devs</Nav.Link>
@@ -98,7 +101,7 @@ function App(){
               <Form.Control type="number" onChange={event => setValor(event.target.value)} placeholder="Ex: 300" />
           </Form.Group>
           <Form.Group >
-          <Button className="botao_procura" variant="outline-success" onClick={() => obtemCotacao()}><FaSearchDollar color="yellow"/>Converter</Button>
+          <Button className="botao_procura" variant="outline-success" onClick={() => obtemCotacao()}> <FaSearchDollar color="yellow"/>Converter</Button>
           </Form.Group>
         {corpo &&
           <Card bg="primary" className="text-center">
@@ -106,8 +109,8 @@ function App(){
               <h3>Conversão</h3>
             </Card.Header>
             <Card.Body className="bg-light">
-              <img src={Bandeira} width="250px" />
-              <h1>R${convertido}</h1>
+              <img src={Bandeira} alt="Brasil" width="250px" />
+              <h1>R$ {convertido}</h1>
             </Card.Body>
           </Card>
         }
